@@ -1,0 +1,21 @@
+<head>
+  <!-- Make pushState routing work -->
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frontend</title>
+  <meta name="description" content="">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="stylesheet" href="/dist/css/libs.min.css">
+  <link rel="stylesheet" href="/dist/css/main.min.css">
+  <script src="dist/js/libs.js"></script>
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('app').catch(function(err){ console.error(err); });
+  </script>
+</head>
+
+<body>
+  <app></app>
+</body>

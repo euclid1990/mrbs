@@ -51,10 +51,13 @@ class CustomValidator extends Validator {
      * @param  array   $parameters
      * @return bool
      */
-    public function validatePasswordOld($attribute, $value, $parameters)
+    public function validatePasswordCurrent($attribute, $value, $parameters)
     {
         $password = bcrypt($value);
-        return $password === Auth::user()->getAuthPassword();
+        if (auth()->user()) {
+            return $password === auth()->user()->getAuthPassword();
+        }
+        return false;
     }
 
     /**

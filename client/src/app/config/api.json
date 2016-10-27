@@ -1,0 +1,17 @@
+{
+    "dashboard": "\/api\/",
+    "user": {
+        "create": "\/api\/user\/create",
+        "store": "\/api\/user",
+        "show": "\/api\/user\/{user}",
+        "edit": "\/api\/user\/{user}\/edit",
+        "update": "\/api\/user\/{user}",
+        "destroy": "\/api\/user\/{user}",
+        "login": "\/api\/user\/login",
+        "logout": "\/api\/user\/logout",
+        "password": "\/api\/user\/password"
+    },
+    "validate": {
+        "unique_email": "\/api\/validate\/unique_email"
+    }
+}

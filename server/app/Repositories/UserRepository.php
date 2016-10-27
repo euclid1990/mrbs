@@ -27,4 +27,22 @@ class UserRepository extends BaseRepository {
     {
         return $this->model->where('email', $email)->first($columns);
     }
+
+    /**
+     * Update status and active_token of confirmed user
+     *
+     * @param  int    $id
+     * @param  string $activeToken
+     * @return int
+     */
+    public function confirm($id, $activeToken)
+    {
+        return $this->model
+            ->where('id', $id)
+                ->where('active_token', $activeToken)
+                    ->update([
+                        'status' => config('common.user.status.active'),
+                        'active_token' => null,
+                    ]);
+    }
 }

@@ -1,0 +1,243 @@
+@mixin margin-left-right($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@mixin margin-top-bottom($top, $bottom) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+@mixin margin-top($top) {
+    margin-top: $top;
+}
+
+@mixin margin-bottom($bottom) {
+    margin-bottom: $bottom;
+}
+
+@mixin margin-left($top) {
+    margin-left: $top;
+}
+
+@mixin margin-right($top) {
+    margin-right: $top;
+}
+
+@mixin padding-left-right($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin padding-top-bottom($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+.margin-bottom-15 {
+    @include margin-bottom(15px);
+}
+
+.margin-left-15 {
+    @include margin-left(15px);
+}
+
+.margin-right-15 {
+    @include margin-right(15px);
+}
+
+.padding-left-right-15 {
+    @include padding-left-right(15px, 15px);
+}
+
+.margin-top-15 {
+    @include margin-top(15px);
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.break-word {
+    word-wrap: break-word;
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    font-size: 15px;
+    padding-top: 70px;
+}
+
+button, a {
+    outline: none !important;
+}
+
+.navbar {
+    .navbar-brand {
+        padding: 5px;
+        img {
+            max-height: 100%;
+            position: relative;
+        }
+    }
+    .navbar-nav {
+        .dropdown-menu {
+            width: 100%;
+            min-width: 0px;
+        }
+        .dropdown-menu>li>a {
+            padding: 3px 15px;
+        }
+        li > a.search-icon {
+            font-size: 20px;
+        }
+    }
+
+    .search-nav {
+        float: right;
+        margin-right: 10px;
+        &.navbar-nav > li > a.search-icon {
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .search-nav {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .search-wrap {
+            display: none;
+        }
+    }
+}
+
+.nav-tabs-custom {
+    &.nav-tabs {
+        border-bottom: 1px solid #FFA767;
+        >li>a {
+            color: #777;
+            border-width: 3px 1px 1px 1px;
+        }
+        >li.active>a, >li.active>a:focus, >li.active>a:hover {
+            color: #EA6300;
+            cursor: default;
+            background-color: #fff;
+            border: 1px solid #FFA767;
+            border-width: 3px 1px 1px 1px;
+            border-bottom-color: transparent;
+        }
+        li>a:hover {
+            border-color: #FFA767 #FFA767 #FFA767;
+        }
+        >li>a:hover {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #FFA767;
+        }
+    }
+}
+
+.search-form {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1031;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+
+    -webkit-transform: translate(0px, -100%) scale(0, 0);
+    -moz-transform: translate(0px, -100%) scale(0, 0);
+    -o-transform: translate(0px, -100%) scale(0, 0);
+    -ms-transform: translate(0px, -100%) scale(0, 0);
+    transform: translate(0px, -100%) scale(0, 0);
+
+    &.search-open {
+        -webkit-transform: translate(0px, 0px) scale(1, 1);
+        -moz-transform: translate(0px, 0px) scale(1, 1);
+        -o-transform: translate(0px, 0px) scale(1, 1);
+        -ms-transform: translate(0px, 0px) scale(1, 1);
+        transform: translate(0px, 0px) scale(1, 1);
+        opacity: 1;
+    }
+
+    input[type="search"] {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        background: rgba(0, 0, 0, 0);
+        font-size: 50px;
+        font-weight: 300;
+        text-align: center;
+        border: 0px;
+        margin: 0px auto;
+        margin-top: -51px;
+        padding-left: 30px;
+        padding-right: 30px;
+        outline: none;
+    }
+
+    .search-close {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        opacity: 1;
+        padding: 5px 15px;
+        font-size: 28px;
+    }
+}
+
+/**
+ * Angular2: Add Custom CSS for Visual Feedback;
+ */
+input, select {
+    &.ng-valid {
+        border-left: 5px solid #42A948; /* green */
+    }
+    &.ng-invalid, &.invalid {
+        border-left: 5px solid #a94442; /* red */
+    }
+}
+
+/**
+ * Style of Form
+ */
+.form-header {
+    margin: 15px auto;
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+}
+.form-error {
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 5px;
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid transparent;
+    border-color: #dca7a7;
+    border-radius: 4px;
+}

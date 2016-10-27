@@ -3,6 +3,7 @@
 /src/*/*.js
 /src/*/*.js.map
 /src/dist/*
+!/src/dist/img/
 /node_modules/*
 /typings/*
 /.sass-cache/*/*

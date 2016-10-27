@@ -28,6 +28,7 @@ var project = {
         this.stylesheets    = this.basePath + '/assets/stylesheets';
         this.js             = this.basePath + '/dist/js';
         this.css            = this.basePath + '/dist/css';
+        this.fonts            = this.basePath + '/dist/fonts';
         this.banner         = '/**\n' +
                               ' * <%= pkg.name %>\n' +
                               ' * <%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -50,15 +51,23 @@ gulp.task('libjs', function() {
 });
 
 gulp.task('libcss', function() {
-    return gulp.src([
+    var cssTask = gulp.src([
         'src/dist/bower/bootstrap/dist/css/bootstrap.min.css',
         'src/dist/bower/bootstrap/dist/css/bootstrap-theme.min.css',
-        'src/dist/fontawesome/css/font-awesome.min.css'
+        'src/dist/bower/font-awesome/css/font-awesome.min.css'
     ])
     .pipe(concat('libs.css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(project.css))
+    .pipe(gulp.dest(project.css));
+
+    var fontTask = gulp.src([
+        'src/dist/bower/bootstrap/dist/fonts/*',
+        'src/dist/bower/font-awesome/fonts/*'
+    ])
+    .pipe(gulp.dest(project.fonts));
+
+    return [cssTask, fontTask];
 });
 
 gulp.task('js', function() {

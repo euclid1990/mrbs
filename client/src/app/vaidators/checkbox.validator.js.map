@@ -1,0 +1,1 @@
+{"version":3,"file":"checkbox.validator.js","sourceRoot":"","sources":["checkbox.validator.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA2B,eAAe,CAAC,CAAA;AAQ3C;IAEI;IAAe,CAAC;IAEhB,yCAAa,GAAb,UAAc,CAAkB;QAC5B,MAAM,CAAC,CAAC,CAAC,KAAK,GAAG,IAAI,GAAG,EAAE,uBAAuB,EAAE,IAAI,EAAE,CAAC;IAC9D,CAAC;IAPL;QAAC,iBAAU,EAAE;;yBAAA;IAQb,wBAAC;AAAD,CAAC,AAPD,IAOC;AAPY,yBAAiB,oBAO7B,CAAA"}

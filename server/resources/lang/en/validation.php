@@ -112,4 +112,6 @@ return [
 
     'attributes' => [],
 
+    'password_current' => 'Current password was not correct',
+
 ];
